@@ -6,6 +6,7 @@ import { Dialog, InputAdornment, Stack, TextField } from "@mui/material";
 import { createFixedSavings } from "../../../../services/cooperative-admin.js";
 import PLVDesktopDatePicker from "../../../form-elements/PLVDesktopDatePicker";
 import { Field, Formik, Form } from "formik";
+import { Today } from "@mui/icons-material";
 
 const CreateFixedPlanModal = ({
 	activeTab,
@@ -15,6 +16,7 @@ const CreateFixedPlanModal = ({
 	setTrigger,
 }) => {
 	const state = activeTab === name;
+
 
 	//   const submitHandler = (values) => {
 	//     console.log(values, "doesnt work");
