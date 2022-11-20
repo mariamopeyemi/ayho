@@ -57,6 +57,8 @@ const FixedSavings = ({trigger}) => {
             <Skeleton variant="rectangular" className=" rounded-primary w-full" animation="wave" height={190} />
             <Skeleton variant="rectangular" className=" rounded-primary w-full" animation="wave" height={190} />
             <Skeleton variant="rectangular" className=" rounded-primary w-full" animation="wave" height={190} />
+            <Skeleton variant="rectangular" className=" rounded-primary w-full" animation="wave" height={190} />
+            <Skeleton variant="rectangular" className=" rounded-primary w-full" animation="wave" height={190} />
           </div>
         )}
     {emptySavings ?
