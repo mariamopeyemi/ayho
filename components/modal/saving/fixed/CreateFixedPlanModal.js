@@ -6,7 +6,6 @@ import { Dialog, InputAdornment, Stack, TextField } from "@mui/material";
 import { createFixedSavings } from "../../../../services/cooperative-admin.js";
 import PLVDesktopDatePicker from "../../../form-elements/PLVDesktopDatePicker";
 import { Field, Formik, Form } from "formik";
-import { Today } from "@mui/icons-material";
 
 const CreateFixedPlanModal = ({
 	activeTab,
@@ -17,10 +16,6 @@ const CreateFixedPlanModal = ({
 }) => {
 	const state = activeTab === name;
 
-
-	//   const submitHandler = (values) => {
-	//     console.log(values, "doesnt work");
-	//   };
 	const INITIALVAL = {
 		title: "",
 		startDate: null,
@@ -28,13 +23,15 @@ const CreateFixedPlanModal = ({
 		amountTobeSaved: "",
 	};
 	const fixFormValidationSchema = Yup.object({
-		title: Yup.string().required("tilet is required"),
+		title: Yup.string().required("title is required"),
 		amountTobeSaved: Yup.string().required("amount is required"),
 		startDate: Yup.date("")
 			.required("Enter a start date")
 			.typeError("Enter a valid date"),
-		endDate: Yup.date("")
-			.required("Enter a end date")
+		endDate: Yup
+			.date("")
+			.min(Yup.ref("startDate"), "End date can not be less than start date")
+			.required("Enter an end date")
 			.typeError("Enter a valid date"),
 	});
 
